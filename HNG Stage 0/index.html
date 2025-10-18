@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 
+    profile card root container
+    name (plain text)
+    short biography
+    current time in ms
+    avatar image (user photo)
+    social links list (github, twitter, linkedin, etc. one element containing the links)
+    hobbiws (list)
+    dislikes (list)
+
+    text color = black
+    primary background color = brown
+    secondary background color = bone??
+    -->
+    <section id="root-container">
+        <article id="profile-card" data-testid="test-profile-card">
+            <div id="left-half">
+                <figure id="avatar" data-testid="test-user-avatar">
+                    <img id="avatar-image" src="images/Snapchat-504507559.jpg" alt="a portrait of the frontend developer">
+                </figure>
+            </div>
+            <div id="right-half">
+                <h2 id="name" data-testid="test-user-name">
+                    Hi, my name is Ayomikun Ayeni!
+                </h2>
+                <p id="bio" data-testid="test-user-bio">
+                    Computer Engineering undergraduate (final year) and Front-End Developer.
+                </p>
+                <p id="current-time-container">
+                    Current time (ms): <time id="current-time" data-testid="test-user-time">Current Time(ms): 0ms</time>
+                </p>
+                <ul id="socials" data-testid="test-user-social-links">
+                    <li class="social-links-container">
+                        <a href="https://github.com/ayomikunayeni" class="social-links" data-testid="test-user-social-network" target="_blank" rel="noopener noreferrer">Github</a>
+                    </li>
+                    <li class="social-links-container">
+                        <a href="https://www.linkedin.com/in/ayomikun-ayeni-17b75938b/" class="social-links" data-testid="test-user-social-network" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </li>
+                    <li class="social-links-container">
+                        <a href="https://x.com/ayeni_ayomikun" class="social-links" data-testid="test-user-social-network" target="_blank" rel="noopener noreferrer">X (formerly Twitter)</a>
+                    </li>
+                </ul>
+                <div id="hobbies-dislikes-container">
+                    <ul id="hobbies" class="left-half" data-testid="test-user-hobbies">
+                        <h3>Hobbies:</h3>
+                        <li class="hobbies-list" data-testid="test-user-hobbies">
+                            Eating
+                        </li>
+                        <li class="hobbies-list" data-testid="test-user-hobbies">
+                            Minecraft
+                        </li>
+                        <li class="hobbies-list" data-testid="test-user-hobbies">
+                            Programming
+                        </li>
+                        <!-- <li class="hobbies-list" data-testid="test-user-hobbies"></li>
+                        <li class="hobbies-list" data-testid="test-user-hobbies"></li> -->
+                    </ul>
+                    <ul id="dislikes" class="right-half" data-testid="test-user-dislikes">
+                        <h3>Dislikes:</h3>
+                        <li class="dislikes-list" data-testid="test-user-dislikes">
+                            Impolite/rude people
+                        </li>
+                        <li class="dislikes-list" data-testid="test-user-dislikes">
+                            Noodles
+                        </li>
+                        <li class="dislikes-list" data-testid="test-user-dislikes">
+                            Horror movies
+                        </li>
+                        <li class="dislikes-list" data-testid="test-user-dislikes">
+                            Coloring websites
+                        </li>
+                        <!-- <li class="dislikes-list" data-testid="test-user-dislikes"></li>
+                        <li class="dislikes-list" data-testid="test-user-dislikes"></li> -->
+                    </ul>
+                </div>
+            </div>
+        </article>
+    </section>
+
+
+    <script>
+        function updateTime() {
+            const timeElement = document.getElementById("current-time");
+            timeElement.textContent = Date.now();
+        }
+        
+        setInterval(updateTime, 100);
+        
+        updateTime();
+    </script>
+</body>
+</html>
